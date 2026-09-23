@@ -1,0 +1,144 @@
+/* Footer: laptop */
+
+@media (max-width: 1280px) {
+    .footer__container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .footer__brand,
+    .footer__form-wrapper {
+        grid-column: 1 / -1;
+    }
+
+    .footer__form-wrapper {
+        max-width: 48rem;
+    }
+}
+
+/* Header: tablet y celular */
+
+@media (max-width: 1024px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+
+        padding: 1.5rem var(--margen-pagina) 2rem;
+
+        display: grid;
+        justify-content: stretch;
+        gap: 0;
+
+        background-color: var(--color-carbon);
+        border-top: 1px solid var(--color-borde);
+        box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.24);
+
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+
+        transform: translateY(-0.75rem);
+
+        transition:
+            opacity 180ms ease,
+            transform 180ms ease,
+            visibility 180ms ease;
+    }
+
+    .main-nav.is-open {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .main-nav__link {
+        padding-block: 1rem;
+        border-bottom: 1px solid var(--color-borde);
+        font-size: 1rem;
+    }
+
+    .main-nav__link::after {
+        display: none;
+    }
+
+    .main-nav__contact {
+        margin-top: 1.25rem;
+    }
+}
+
+/* Footer: tablet */
+
+@media (max-width: 900px) {
+    .footer__container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer__brand,
+    .footer__form-wrapper {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Footer: celular */
+
+@media (max-width: 640px) {
+    .footer__container {
+        padding-block: 3.5rem 2.5rem;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer__brand,
+    .footer__form-wrapper {
+        grid-column: auto;
+    }
+
+    .footer__form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__button {
+        width: 100%;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --altura-header: 5rem;
+    }
+
+    .brand__mark {
+        width: 2.5rem;
+    }
+
+    .brand__text strong {
+        font-size: 1.05rem;
+    }
+
+    .brand__text small {
+        font-size: 0.625rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}

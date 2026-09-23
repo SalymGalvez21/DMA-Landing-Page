@@ -1,0 +1,13 @@
+:root {
+    --color-negro: #1a1a1a;
+    --color-carbon: #212121;
+    --color-blanco: #ffffff;
+    --color-naranja: #f7941d;
+    --color-naranja-hover: #dd7d08;
+    --color-gris: #b8b8b8;
+    --color-borde: rgba(255, 255, 255, 0.16);
+
+    --tipografia: "Montserrat", Arial, sans-serif;
+    --margen-pagina: clamp(1.25rem, 4vw, 4.5rem);
+    --altura-header: 5.75rem;
+}
