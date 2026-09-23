@@ -72,6 +72,64 @@
     }
 }
 
+/* Hero: tablet y celular */
+
+@media (max-width: 1024px) {
+    .hero__inner {
+        min-height: auto;
+        padding-block: 3.5rem 4rem;
+
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .hero__media {
+        min-height: 22rem;
+    }
+
+    .hero__badge {
+        top: auto;
+        bottom: 0;
+        left: 1.5rem;
+
+        width: 8rem;
+
+        transform: translateY(40%);
+    }
+}
+
+@media (max-width: 640px) {
+    .hero__text {
+        font-size: 0.95rem;
+    }
+
+    .hero__actions {
+        display: grid;
+    }
+
+    .hero__button {
+        width: 100%;
+    }
+
+    .hero__media {
+        min-height: 16rem;
+    }
+
+    .hero__badge {
+        width: 7rem;
+        border-width: 4px;
+    }
+
+    .hero__badge-mark {
+        width: 2rem;
+        font-size: 1rem;
+    }
+
+    .hero__badge-text {
+        font-size: 0.6rem;
+    }
+}
+
 /* Footer: tablet */
 
 @media (max-width: 900px) {
