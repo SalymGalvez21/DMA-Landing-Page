@@ -281,35 +281,139 @@
     </main>
 
     <!-- Pie de página -->
-    <footer>
-        <div>
-            <a class="brand" href="#inicio" aria-label="DMA Servicios, volver al inicio">
-                <span class="brand__mark" aria-hidden="true">
-                    D
-                </span>
-
-                <span class="brand__text">
-                    <strong>DMA</strong>
-                    <small>Servicios S.R.L.</small>
-                </span>
-            </a>
-
-            <p>
-                Confianza y seguridad en soluciones empresariales.
+    <footer class="footer" id="footer">
+    
+    <div class="footer__container">
+    
+        <!-- 1. Marca + datos de contacto -->
+        <div class="footer__brand">
+        <a href="#inicio" class="footer__logo" aria-label="DMA SERVICIOS - Ir al inicio">
+            <img src="assets/img/logo-dma.png" alt="Logo DMA SERVICIOS S.R.L." class="footer__logo-img">
+        </a>
+        <p class="footer__tagline">Confianza y seguridad en soluciones empresariales.</p>
+    
+        <address class="footer__contact">
+            <p class="footer__contact-item">
+            <span class="footer__contact-label">Dirección:</span>
+            [Dirección de la oficina], [Distrito], Lima, Perú
             </p>
-
-            <nav aria-label="Navegación del pie de página">
-                <a href="#nosotros">Nosotros</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#proyectos">Proyectos</a>
-                <a href="#sectores">Sectores</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
-
-            <p>
-                © 2026 DMA Servicios S.R.L. Todos los derechos reservados.
+            <p class="footer__contact-item">
+            <span class="footer__contact-label">Teléfono:</span>
+            <a href="tel:+51000000000">+51 [000 000 000]</a>
             </p>
+            <p class="footer__contact-item">
+            <span class="footer__contact-label">Correo:</span>
+            <a href="mailto:contacto@dmaservicios.com">[contacto@dmaservicios.com]</a>
+            </p>
+            <p class="footer__contact-item">
+            <span class="footer__contact-label">Horario:</span>
+            Lunes a viernes, [8:00 a. m. – 6:00 p. m.]
+            </p>
+        </address>
         </div>
+    
+        <!-- 2. Menú -->
+        <nav class="footer__nav" aria-label="Menú del pie de página">
+        <h3 class="footer__title">Menú</h3>
+        <ul class="footer__list">
+            <li class="footer__item"><a href="#inicio" class="footer__link">Inicio</a></li>
+            <li class="footer__item"><a href="#nosotros" class="footer__link">Nosotros</a></li>
+            <li class="footer__item"><a href="#servicios" class="footer__link">Servicios</a></li>
+            <li class="footer__item"><a href="#proyectos" class="footer__link">Proyectos</a></li>
+            <li class="footer__item"><a href="#clientes" class="footer__link">Clientes</a></li>
+            <li class="footer__item"><a href="#contacto" class="footer__link">Contacto</a></li>
+        </ul>
+        </nav>
+    
+        <!-- 3. Servicios -->
+        <div class="footer__services">
+        <h3 class="footer__title">Servicios</h3>
+        <ul class="footer__list">
+            <li class="footer__item"><a href="#servicios" class="footer__link">Construcción</a></li>
+            <li class="footer__item"><a href="#servicios" class="footer__link">Ingeniería</a></li>
+            <li class="footer__item"><a href="#servicios" class="footer__link">Obras civiles</a></li>
+            <li class="footer__item"><a href="#servicios" class="footer__link">Instalaciones eléctricas</a></li>
+            <li class="footer__item"><a href="#servicios" class="footer__link">Mantenimiento</a></li>
+            <li class="footer__item"><a href="#servicios" class="footer__link">Gestión de proyectos</a></li>
+        </ul>
+        </div>
+    
+        <!-- 4. Redes sociales -->
+        <div class="footer__social">
+        <h3 class="footer__title">Redes sociales</h3>
+        <ul class="footer__list footer__social-list">
+            <li class="footer__item">
+            <a href="https://www.linkedin.com/company/[dma-servicios]" class="footer__link footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de DMA SERVICIOS">LinkedIn</a>
+            </li>
+            <li class="footer__item">
+            <a href="https://www.facebook.com/[dma-servicios]" class="footer__link footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook de DMA SERVICIOS">Facebook</a>
+            </li>
+            <li class="footer__item">
+            <a href="https://www.instagram.com/[dma-servicios]" class="footer__link footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram de DMA SERVICIOS">Instagram</a>
+            </li>
+            <li class="footer__item">
+            <a href="https://wa.me/51000000000" class="footer__link footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">WhatsApp</a>
+            </li>
+        </ul>
+        </div>
+    
+        <!-- 5. Formulario "Contáctanos" -->
+        <div class="footer__form-wrapper">
+        <h3 class="footer__title">Contáctanos</h3>
+        <form class="footer__form" action="#" method="post">
+            <div class="footer__form-row">
+            <div class="footer__field">
+                <label for="footer-nombre" class="footer__label">Nombre *</label>
+                <input type="text" id="footer-nombre" name="nombre" class="footer__input" required>
+            </div>
+            <div class="footer__field">
+                <label for="footer-apellido" class="footer__label">Apellido *</label>
+                <input type="text" id="footer-apellido" name="apellido" class="footer__input" required>
+            </div>
+            </div>
+    
+            <div class="footer__form-row">
+            <div class="footer__field">
+                <label for="footer-email" class="footer__label">Correo electrónico *</label>
+                <input type="email" id="footer-email" name="email" class="footer__input" required>
+            </div>
+            <div class="footer__field">
+                <label for="footer-telefono" class="footer__label">Teléfono</label>
+                <input type="tel" id="footer-telefono" name="telefono" class="footer__input">
+            </div>
+            </div>
+    
+            <div class="footer__field">
+            <label for="footer-empresa" class="footer__label">Empresa</label>
+            <input type="text" id="footer-empresa" name="empresa" class="footer__input">
+            </div>
+    
+            <div class="footer__field">
+            <label for="footer-asunto" class="footer__label">Asunto</label>
+            <input type="text" id="footer-asunto" name="asunto" class="footer__input">
+            </div>
+    
+            <div class="footer__field">
+            <label for="footer-mensaje" class="footer__label">Mensaje</label>
+            <textarea id="footer-mensaje" name="mensaje" class="footer__textarea" rows="4"></textarea>
+            </div>
+    
+            <button type="submit" class="footer__button">Enviar</button>
+        </form>
+        </div>
+    
+    </div>
+    
+    <!-- Barra inferior: legal + copyright -->
+    <div class="footer__bottom">
+        <p class="footer__copy">© 2026 DMA SERVICIOS S.R.L. Todos los derechos reservados.</p>
+        <p class="footer__ruc">RUC: [00000000000]</p>
+        <ul class="footer__legal">
+        <li class="footer__legal-item"><a href="politica-de-privacidad.html" class="footer__link">Política de privacidad</a></li>
+        <li class="footer__legal-item"><a href="terminos-y-condiciones.html" class="footer__link">Términos y condiciones</a></li>
+        </ul>
+    </div>
+    
     </footer>
 
     <!-- Archivo JavaScript -->
