@@ -28,12 +28,28 @@ a {
 /* Header */
 
 .site-header {
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 20;
     min-height: var(--altura-header);
     color: var(--color-blanco);
     background-color: var(--color-negro);
     border-bottom: 1px solid var(--color-borde);
+
+    transition: box-shadow 180ms ease;
+}
+
+/* Sombra cuando la página ya se desplazó (la agrega main.js) */
+
+.site-header.is-scrolled {
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.28);
+}
+
+/* Evita que el header fijo tape el inicio de cada sección */
+
+section[id],
+[id="contacto"] {
+    scroll-margin-top: var(--altura-header);
 }
 
 .site-header__inner {
@@ -836,6 +852,265 @@ a {
     inset: 1.25rem;
     border: 1px solid rgba(255, 255, 255, 0.14);
     pointer-events: none;
+}
+
+/* Proyectos / Nuestra experiencia */
+
+.projects {
+    padding: clamp(5rem, 9vw, 8rem) var(--margen-pagina);
+
+    color: var(--color-blanco);
+    background-color: var(--color-negro);
+    background-image:
+        linear-gradient(180deg, rgba(26, 26, 26, 0.94), rgba(26, 26, 26, 0.98)),
+        repeating-linear-gradient(0deg, var(--color-borde) 0 1px, transparent 1px 4rem),
+        repeating-linear-gradient(90deg, var(--color-borde) 0 1px, transparent 1px 4rem);
+}
+
+.projects__inner {
+    width: min(100%, 1536px);
+    margin: 0 auto;
+}
+
+.projects__heading {
+    margin-bottom: clamp(3rem, 5vw, 4rem);
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: end;
+    gap: 2rem 4rem;
+}
+
+.projects__eyebrow {
+    color: var(--color-naranja);
+}
+
+.projects__title {
+    margin: 0;
+    font-size: clamp(2.25rem, 4vw, 3.75rem);
+    line-height: 1.1;
+}
+
+.projects__intro {
+    margin: 0;
+    max-width: 34rem;
+    justify-self: end;
+    color: var(--color-gris);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+/* Tarjetas de proyecto */
+
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--color-carbon);
+    border-bottom: 3px solid transparent;
+
+    transition:
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+.project-card:hover {
+    border-color: var(--color-naranja);
+    transform: translateY(-4px);
+}
+
+.project-card__media {
+    position: relative;
+    overflow: hidden;
+    min-height: 16rem;
+
+    display: grid;
+    place-content: center;
+    gap: 0.75rem;
+
+    color: var(--color-gris);
+    /* Reemplazar por: background: url("../img/proyecto-01.jpg") center / cover no-repeat; */
+    background:
+        linear-gradient(145deg, rgba(247, 148, 29, 0.16), transparent 58%),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 3rem),
+        #262626;
+
+    text-align: center;
+}
+
+.project-card__media::after {
+    content: "";
+    position: absolute;
+    inset: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    pointer-events: none;
+}
+
+.project-card__body {
+    padding: 2rem;
+}
+
+.project-card__tag {
+    margin: 0 0 0.75rem;
+    color: var(--color-naranja);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.project-card__title {
+    margin: 0;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    line-height: 1.25;
+}
+
+.project-card__text {
+    margin: 1rem 0 0;
+    color: var(--color-gris);
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+/* Sectores */
+
+.sectors {
+    padding: clamp(5rem, 9vw, 8rem) var(--margen-pagina);
+    background-color: #f4f4f4;
+}
+
+.sectors__inner {
+    width: min(100%, 1536px);
+    margin: 0 auto;
+}
+
+.sectors__heading {
+    width: min(100%, 52rem);
+    margin: 0 auto clamp(3rem, 6vw, 5rem);
+    text-align: center;
+}
+
+.sectors__title {
+    margin: 0;
+    font-size: clamp(2.25rem, 4vw, 3.75rem);
+    line-height: 1.1;
+}
+
+.sectors__intro {
+    margin: 1.5rem auto 0;
+    color: #595959;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.sectors__grid {
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+
+    list-style: none;
+}
+
+.sector-card {
+    min-height: 18rem;
+    padding: clamp(2rem, 3vw, 2.5rem);
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--color-blanco);
+    border-top: 3px solid transparent;
+
+    transition:
+        border-color 180ms ease,
+        transform 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.sector-card:hover {
+    border-color: var(--color-naranja);
+    box-shadow: 0 1rem 2.5rem rgba(26, 26, 26, 0.08);
+    transform: translateY(-4px);
+}
+
+.sector-card__number {
+    margin-bottom: 3rem;
+    color: var(--color-naranja-hover);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.sector-card__title {
+    margin: 0;
+    font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+    line-height: 1.25;
+}
+
+.sector-card__text {
+    margin: 0.85rem 0 0;
+    color: #595959;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* Llamado a la acción */
+
+.sectors__cta {
+    margin-top: clamp(3rem, 5vw, 4rem);
+    padding: clamp(2rem, 4vw, 3rem);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem 3rem;
+
+    color: var(--color-blanco);
+    background-color: var(--color-negro);
+    border-left: 4px solid var(--color-naranja);
+}
+
+.sectors__cta-text {
+    margin: 0;
+    max-width: 40rem;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.sectors__cta-button {
+    min-height: 3.25rem;
+    padding-inline: 1.75rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+
+    color: var(--color-negro);
+    background-color: var(--color-naranja);
+
+    font-size: 0.9rem;
+    font-weight: 800;
+
+    transition:
+        background-color 180ms ease,
+        transform 180ms ease;
+}
+
+.sectors__cta-button:hover,
+.sectors__cta-button:focus-visible {
+    background-color: var(--color-naranja-hover);
+    transform: translateY(-2px);
 }
 
 /* Footer */

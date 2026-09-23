@@ -239,6 +239,63 @@
     }
 }
 
+/* Proyectos y Sectores */
+
+@media (max-width: 1024px) {
+    .projects__heading {
+        grid-template-columns: 1fr;
+    }
+
+    .projects__intro {
+        justify-self: start;
+    }
+
+    .projects__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sectors__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sector-card {
+        min-height: 15rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .projects,
+    .sectors {
+        padding-block: 4rem;
+    }
+
+    .projects__grid,
+    .sectors__grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .project-card__media {
+        min-height: 13rem;
+    }
+
+    .project-card__body {
+        padding: 1.5rem;
+    }
+
+    .sector-card {
+        min-height: auto;
+    }
+
+    .sector-card__number {
+        margin-bottom: 2rem;
+    }
+
+    .sectors__cta-button {
+        width: 100%;
+    }
+}
+
 /* Footer: tablet */
 
 @media (max-width: 900px) {
