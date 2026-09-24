@@ -361,24 +361,16 @@ section[id],
 .hero__image {
     position: absolute;
     inset: 0;
-
-    display: grid;
-    place-items: center;
-
-    /* Reemplazar por: background: url("../img/hero.jpg") center / cover no-repeat; */
-    background:
-        linear-gradient(135deg, rgba(247, 148, 29, 0.18), transparent 60%),
-        var(--color-carbon);
+    overflow: hidden;
     border: 1px solid var(--color-borde);
 }
 
-.hero__image-label {
-    color: var(--color-gris);
-
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+.hero__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Sello */
@@ -551,6 +543,17 @@ section[id],
     pointer-events: none;
 }
 
+.about-preview__media img,
+.about-detail__media img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 .image-placeholder__number {
     color: var(--color-naranja);
     font-size: 2.5rem;
@@ -689,13 +692,13 @@ section[id],
 }
 
 .vision-card {
-    min-height: 21rem;
+    min-height: 16rem;
     padding: clamp(2rem, 4vw, 3.25rem);
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 4rem;
+    justify-content: flex-start;
+    gap: 2.25rem;
 
     background-color: var(--color-blanco);
     border-top: 3px solid transparent;
@@ -740,6 +743,72 @@ section[id],
     line-height: 1.75;
 }
 
+/* Certificaciones */
+
+.certifications {
+    padding: clamp(5rem, 9vw, 8rem) var(--margen-pagina);
+    color: var(--color-blanco);
+    background-color: var(--color-negro);
+}
+
+.certifications__inner {
+    width: min(100%, 1536px);
+    margin: 0 auto;
+}
+
+.certifications__heading {
+    max-width: 52rem;
+}
+
+.certifications__title {
+    margin: 0;
+    font-size: clamp(2.25rem, 4vw, 3.75rem);
+    line-height: 1.1;
+}
+
+.certifications__intro {
+    margin: 1.5rem 0 0;
+    color: var(--color-gris);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.certifications__grid {
+    margin: clamp(3rem, 6vw, 5rem) 0 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+
+    background-color: var(--color-borde);
+    border: 1px solid var(--color-borde);
+    list-style: none;
+}
+
+.certifications__grid li {
+    min-height: 9rem;
+    padding: 1.75rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    background-color: var(--color-carbon);
+}
+
+.certifications__grid strong {
+    color: var(--color-naranja);
+    font-size: 1.2rem;
+}
+
+.certifications__grid span {
+    color: var(--color-gris);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
 /* Servicios */
 
 .services {
@@ -777,7 +846,7 @@ section[id],
 
 .service-card,
 .service-media {
-    min-height: 22rem;
+    min-height: 20rem;
 }
 
 .service-card {
@@ -786,7 +855,7 @@ section[id],
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 4rem;
+    gap: 3rem;
 
     background-color: #f4f4f4;
     border-bottom: 3px solid transparent;
@@ -852,6 +921,47 @@ section[id],
     inset: 1.25rem;
     border: 1px solid rgba(255, 255, 255, 0.14);
     pointer-events: none;
+}
+
+.service-media img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.service-media--specialized img {
+    object-position: 50% 52%;
+}
+
+/* Clientes */
+
+.clients {
+    margin-top: clamp(3rem, 6vw, 5rem);
+    padding-top: clamp(2rem, 4vw, 3rem);
+    border-top: 1px solid rgba(26, 26, 26, 0.15);
+}
+
+.clients__list {
+    margin: 1.5rem 0 0;
+    padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    list-style: none;
+}
+
+.clients__list li {
+    padding: 0.75rem 1rem;
+    background-color: var(--color-blanco);
+    border: 1px solid rgba(26, 26, 26, 0.16);
+    font-size: 0.8rem;
+    font-weight: 700;
 }
 
 /* Proyectos / Nuestra experiencia */
@@ -952,6 +1062,28 @@ section[id],
     pointer-events: none;
 }
 
+.project-card__media img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.project-card__media--sjl img {
+    object-position: 50% 42%;
+}
+
+.project-card__media--electrification img {
+    object-position: 50% 50%;
+}
+
+.project-card__media--villa-mongrut img {
+    object-position: 50% 54%;
+}
+
 .project-card__body {
     padding: 2rem;
 }
@@ -1021,7 +1153,7 @@ section[id],
 }
 
 .sector-card {
-    min-height: 18rem;
+    min-height: 16.5rem;
     padding: clamp(2rem, 3vw, 2.5rem);
 
     display: flex;
@@ -1043,7 +1175,7 @@ section[id],
 }
 
 .sector-card__number {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     color: var(--color-naranja-hover);
     font-size: 1.15rem;
     font-weight: 700;
